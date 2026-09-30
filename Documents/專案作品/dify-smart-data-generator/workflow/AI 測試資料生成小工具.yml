@@ -1,0 +1,1464 @@
+app:
+  description: 專為開發、測試與資料團隊設計的自動化測試資料產生器。支援自訂資料表結構（Schema）或白話文規格描述，並可結合外部關聯代碼表（如醫院清單、疾病代碼、證照對照等）進行資料生成。
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: workflow
+  name: AI 測試資料生成小工具
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/gemini:0.9.10@4979b8843fa46c3c2143d339f5868f04d9d77166616c00dd9f811a4adfce03ab
+    version: null
+kind: app
+version: 0.7.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        knowledge_file_size_limit: 15
+        single_chunk_attachment_limit: 10
+        skill_file_size_limit: 50
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1770963954361-source-1770965773097-target
+      selected: false
+      source: '1770963954361'
+      sourceHandle: source
+      target: '1770965773097'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1770959733651-source-1770967124419-target
+      selected: false
+      source: '1770959733651'
+      sourceHandle: source
+      target: '1770967124419'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1770967124419-false-17709700839860-target
+      selected: false
+      source: '1770967124419'
+      sourceHandle: 'false'
+      target: '17709700839860'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 17709700839860-source-1770970857873-target
+      selected: false
+      source: '17709700839860'
+      sourceHandle: source
+      target: '1770970857873'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: code
+      id: 1770970857873-source-1770963954361-target
+      selected: false
+      source: '1770970857873'
+      sourceHandle: source
+      target: '1770963954361'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1771814876931-source-1770970857873-target
+      selected: false
+      source: '1771814876931'
+      sourceHandle: source
+      target: '1770970857873'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: document-extractor
+      id: 1771902295501-source-1771902302816-target
+      selected: false
+      source: '1771902295501'
+      sourceHandle: source
+      target: '1771902302816'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1770963829894-source-17719018131900-target
+      selected: false
+      source: '1770963829894'
+      sourceHandle: source
+      target: '17719018131900'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 17719018264720-source-1770970857873-target
+      selected: false
+      source: '17719018264720'
+      sourceHandle: source
+      target: '1770970857873'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 17719018131900-source-1770970857873-target
+      selected: false
+      source: '17719018131900'
+      sourceHandle: source
+      target: '1770970857873'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 1770967124419-cb100121-366a-4491-8144-4149c7dea743-1771902295501-target
+      selected: false
+      source: '1770967124419'
+      sourceHandle: cb100121-366a-4491-8144-4149c7dea743
+      target: '1771902295501'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 1770967124419-7fb57fb4-7ddb-49c1-8ca8-bedc0ff25bcf-1771818070906-target
+      selected: false
+      source: '1770967124419'
+      sourceHandle: 7fb57fb4-7ddb-49c1-8ca8-bedc0ff25bcf
+      target: '1771818070906'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 1770967124419-22adfb50-5960-40c8-9c3a-05053912fa67-1770963829894-target
+      selected: false
+      source: '1770967124419'
+      sourceHandle: 22adfb50-5960-40c8-9c3a-05053912fa67
+      target: '1770963829894'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: template-transform
+      id: 1770967124419-true-1772438776106-target
+      selected: false
+      source: '1770967124419'
+      sourceHandle: 'true'
+      target: '1772438776106'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 1772438776106-source-1772431109071-target
+      selected: false
+      source: '1772438776106'
+      sourceHandle: source
+      target: '1772431109071'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: template-transform
+      id: 1771814876931-fail-branch-1773023087529-target
+      selected: false
+      source: '1771814876931'
+      sourceHandle: fail-branch
+      target: '1773023087529'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: template-transform
+      id: 17719018264720-fail-branch-1773023087529-target
+      selected: false
+      source: '17719018264720'
+      sourceHandle: fail-branch
+      target: '1773023087529'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: template-transform
+      id: 17719018131900-fail-branch-1773023087529-target
+      selected: false
+      source: '17719018131900'
+      sourceHandle: fail-branch
+      target: '1773023087529'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: template-transform
+      id: 17709700839860-fail-branch-1773023087529-target
+      selected: false
+      source: '17709700839860'
+      sourceHandle: fail-branch
+      target: '1773023087529'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 1773023087529-source-1773022769926-target
+      selected: false
+      source: '1773023087529'
+      sourceHandle: source
+      target: '1773022769926'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1774837600622-source-1771814876931-target
+      selected: false
+      source: '1774837600622'
+      sourceHandle: source
+      target: '1771814876931'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1774838511632-source-17719018264720-target
+      selected: false
+      source: '1774838511632'
+      sourceHandle: source
+      target: '17719018264720'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1771902302816-source-1774837600622-target
+      source: '1771902302816'
+      sourceHandle: source
+      target: '1774837600622'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1771818070906-source-1774838511632-target
+      source: '1771818070906'
+      sourceHandle: source
+      target: '1774838511632'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 開始
+        type: start
+        variables:
+        - default: '20'
+          hint: ''
+          label: 目標生成筆數
+          options: []
+          placeholder: ''
+          required: true
+          type: number
+          variable: target_count
+        - default: 例：CREATE TABLE Books (  BookID INT PRIMARY KEY,  Title NVARCHAR(100),  AuthorID
+            INT,  PublishDate DATE );
+          hint: ''
+          label: Create語法/白話文敘述
+          options: []
+          placeholder: ''
+          required: false
+          type: paragraph
+          variable: table_schema
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          - image
+          allowed_file_upload_methods:
+          - local_file
+          default: ''
+          hint: ''
+          label: 資料規格檔案
+          options: []
+          placeholder: ''
+          required: false
+          type: file
+          variable: schema_file
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          - image
+          allowed_file_upload_methods:
+          - local_file
+          default: ''
+          hint: ''
+          label: 關聯代碼表
+          max_length: 10
+          options: []
+          placeholder: ''
+          required: false
+          type: file-list
+          variable: reference_file
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - image
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          hint: ''
+          label: 特定欄位限制及資料破壞規則
+          options: []
+          placeholder: ''
+          required: false
+          type: file
+          variable: reference_manual
+        - default: '100'
+          hint: ''
+          label: 資料正確率(%)
+          max_length: null
+          options:
+          - '100'
+          - '95'
+          - '90'
+          - '80'
+          - '70'
+          - '50'
+          placeholder: ''
+          required: true
+          type: select
+          variable: accuracy_rate
+      height: 239
+      id: '1770959733651'
+      position:
+        x: -508.8045945840831
+        y: 112.89661283325503
+      positionAbsolute:
+        x: -508.8045945840831
+        y: 112.89661283325503
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        is_array_file: false
+        selected: false
+        title: Schema Extractor
+        type: document-extractor
+        variable_selector:
+        - '1770959733651'
+        - schema_file
+      height: 104
+      id: '1770963829894'
+      position:
+        x: 258.09305440103606
+        y: 189.0276540566603
+      positionAbsolute:
+        x: 258.09305440103606
+        y: 189.0276540566603
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "import random\nimport datetime\nimport string\nimport csv\nimport io\n\
+          \ndef main(code_from_ai: str, target_count: int, full_ref_B=\"\", full_ref_R=\"\
+          \"):\n    # 清洗程式碼\n    clean_code = code_from_ai.replace(\"```python\",\
+          \ \"\").replace(\"```\", \"\").strip()\n    \n    # 取得大表變數\n    raw_ref\
+          \ = full_ref_B if full_ref_B else full_ref_R\n    \n    # 字串轉型與清洗\n    if\
+          \ isinstance(raw_ref, list):\n        final_ref_str = '\\n'.join([str(x)\
+          \ for x in raw_ref])\n    else:\n        final_ref_str = str(raw_ref)\n\
+          \        if final_ref_str.startswith(\"['\") and final_ref_str.endswith(\"\
+          ']\"):\n            final_ref_str = final_ref_str[2:-2].replace(\"', '\"\
+          , \"\\n\")\n            \n    final_ref_str = final_ref_str.replace('\\\\\
+          n', '\\n').replace('\\\\r', '\\n')\n    \n    # 建立沙盒環境 \n    env = {\n \
+          \       'random': random,\n        'datetime': datetime,\n        'string':\
+          \ string,\n        'csv': csv,\n        'io': io,\n        'digits': string.digits,\
+          \                \n        'ascii_uppercase': string.ascii_uppercase,\n\
+          \        'ascii_letters': string.ascii_letters,\n        'target_count':\
+          \ target_count,\n        'reference_csv_data': final_ref_str\n    }\n  \
+          \  \n    try:\n        exec(clean_code, env)\n        \n        csv_str\
+          \ = env.get('result', \"Error: AI 生成的程式碼中沒有 result 變數\")\n        \n   \
+          \     return {\n            \"result\": csv_str\n        }\n    except Exception\
+          \ as e:\n        debug_msg = f\"【程式邏輯崩潰】: {str(e)}\\n\\n--- AI 生成的代碼如下 ---\\\
+          n{clean_code}\"\n        return {\n            \"result\": debug_msg\n \
+          \       }"
+        code_language: python3
+        default_value:
+        - key: result
+          type: string
+          value: ''
+        error_strategy: default-value
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 程式碼執行
+        type: code
+        variables:
+        - value_selector:
+          - '1770970857873'
+          - output
+          value_type: string
+          variable: code_from_ai
+        - value_selector:
+          - '1770959733651'
+          - target_count
+          value_type: number
+          variable: target_count
+        - value_selector:
+          - '1771902302816'
+          - text
+          value_type: string
+          variable: full_ref_B
+        - value_selector:
+          - '1771818070906'
+          - text
+          value_type: string
+          variable: full_ref_R
+      height: 88
+      id: '1770963954361'
+      position:
+        x: 1926.451265443557
+        y: 259.8615008068425
+      positionAbsolute:
+        x: 1926.451265443557
+        y: 259.8615008068425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        outputs:
+        - value_selector:
+          - '1770963954361'
+          - result
+          value_type: string
+          variable: output_file
+        selected: false
+        title: 輸出
+        type: end
+      height: 88
+      id: '1770965773097'
+      position:
+        x: 2219.5700091992144
+        y: 259.8615008068425
+      positionAbsolute:
+        x: 2219.5700091992144
+        y: 259.8615008068425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not exists
+            id: 40036f90-5361-42bd-87e2-0b8ef1b7de7e
+            value: ''
+            varType: file
+            variable_selector:
+            - '1770959733651'
+            - schema_file
+          - comparison_operator: empty
+            id: f76d0df6-39f6-4dd5-9e46-42d2f654996e
+            value: ''
+            varType: string
+            variable_selector:
+            - '1770959733651'
+            - table_schema
+          id: 'true'
+          logical_operator: and
+        - case_id: cb100121-366a-4491-8144-4149c7dea743
+          conditions:
+          - comparison_operator: not empty
+            id: 08e739b5-90a7-4f32-add8-6f94ca7b3f68
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1770959733651'
+            - reference_file
+          - comparison_operator: exists
+            id: ec0e5a1d-6841-498e-9724-65df1c31d397
+            value: ''
+            varType: file
+            variable_selector:
+            - '1770959733651'
+            - schema_file
+          id: cb100121-366a-4491-8144-4149c7dea743
+          logical_operator: and
+        - case_id: 7fb57fb4-7ddb-49c1-8ca8-bedc0ff25bcf
+          conditions:
+          - comparison_operator: not empty
+            id: 83f6d275-0f01-46a5-911c-5dad14bb67de
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1770959733651'
+            - reference_file
+          - comparison_operator: not exists
+            id: 4a6e6993-771a-4e11-8bb1-edd079b627c2
+            value: ''
+            varType: file
+            variable_selector:
+            - '1770959733651'
+            - schema_file
+          id: 7fb57fb4-7ddb-49c1-8ca8-bedc0ff25bcf
+          logical_operator: and
+        - case_id: 22adfb50-5960-40c8-9c3a-05053912fa67
+          conditions:
+          - comparison_operator: empty
+            id: 44a9e620-b826-4bd5-a96a-e459ddc25554
+            sub_variable_condition:
+              case_id: a21dd20d-8d4a-434d-b202-f8baa7091664
+              conditions: []
+              logical_operator: and
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1770959733651'
+            - reference_file
+          - comparison_operator: exists
+            id: bfa8448e-e00a-4f70-a820-c95c58d79076
+            value: ''
+            varType: file
+            variable_selector:
+            - '1770959733651'
+            - schema_file
+          id: 22adfb50-5960-40c8-9c3a-05053912fa67
+          logical_operator: and
+        selected: false
+        title: 條件分支
+        type: if-else
+      height: 372
+      id: '1770967124419'
+      position:
+        x: -216.08064731311245
+        y: 133.89661283325503
+      positionAbsolute:
+        x: -216.08064731311245
+        y: 133.89661283325503
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        error_strategy: fail-branch
+        model:
+          completion_params:
+            temperature: 0.5
+          mode: chat
+          name: gemini-2.5-flash
+          provider: langgenius/gemini/google
+        prompt_config:
+          jinja2_variables: []
+        prompt_template:
+        - edition_type: basic
+          id: 65a55616-b910-4796-81dc-dc808108c00e
+          role: system
+          text: "# Role\n\n你是一位專精於「去識別化測試資料」與「異常資料精確模擬 (Exact Ratio Negative Testing)」的\
+            \ Python 資料工程師。\n\n# Task\n\n根據使用者提供的「資料表結構定義（SQL 或白話文）」與「手動限制 / 特定欄位限制及資料破壞規則\
+            \ (reference_manual)」，撰寫一段純 Python 程式碼。該程式碼需能根據「正確率 (accuracy_rate)」參數，以絕對精準的比例，動態生成包含正常與異常樣態的中性測試資料。\n\
+            \n# Rules (極度重要)\n\n1. 【技術限制】\n  * 請僅限且完全使用 Python 內建標準庫（如：`csv`, `random`,\
+            \ `datetime`, `string`, `io`, `re`）來實作所有邏輯，確保程式碼具備 100% 的原生獨立性，並省略所有外部第三方套件（如\
+            \ pandas、faker）的呼叫。\n\n2. 【精確比例控制 (Exact Ratio Control)】\n  * 請一律透過建立狀態清單並洗牌\
+            \ (status_list + shuffle) 的方式，來精準控制每一筆資料的正確與否狀態。\n  * 必須根據 `target_count`\
+            \ 與 `accuracy_rate` 計算出精確的正確與異常筆數。請務必先對 `accuracy_rate` 進行範圍安全校正，例如：`safe_rate\
+            \ = max(0, min(100, float(accuracy_rate)))`，接著再計算：`correct_count = int(target_count\
+            \ * (safe_rate / 100))`。\n  * 實作邏輯要求：建立狀態清單 `status_list = ['correct']\
+            \ * correct_count + ['error'] * (target_count - correct_count)`。使用 `random.shuffle(status_list)`\
+            \ 打亂後，在資料生成迴圈中依序取出狀態，確保比例 100% 精準。\n  * **正確樣態 (Valid Data)**：嚴格遵守 Schema\
+            \ 骨架與「手動限制 / 參考手冊」。【極度重要】若限制中包含「跨欄位關聯（如 C=0時D必為空）」或「數學比較（如 A > B）」，請務必在生成基底資料時，實作對應的\
+            \ `if/else` 條件式來進行「連動生成」，以確保資料邏輯的絕對合理。\n  * **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成異常資料列時，請確保僅挑選「\
+            \ 1 到 2 個」受約束的欄位進行破壞（如違反手冊定義的數值範圍）。**注意：即使是異常資料，也請務必確保其字串長度維持在手冊或常理定義的最大長度限制內**。針對該異常列中的「其餘所有欄位」，請務必維持\
+            \ 100% 格式與邏輯正確。\n\n3. 【結構解析與異常樣態定義】\n  * 基礎骨架建立請完全以「資料表結構定義」為準。若為白話文描述，請自動推斷為合適的英文欄位名稱與資料庫型別。\n\
+            \  * **型態保證 (Type Safety)**：異常資料請務必維持原有的資料型態（例如 INT 仍須為數字，維持數值型態）。\n \
+            \ * **【空值 (NULL) 嚴格約束與隨機性保證】**：\n    (1). **必填欄位**：若從結構或手冊中解析出該欄位為必填（NOT\
+            \ NULL），請確保強制產出符合型態的有效值。\n    (2). **允許空值欄位 (極度重要)**：若無明確標示必填則視為允許空值，請你務必在生成邏輯中，確實實作「10%~20%\
+            \ 隨機生成空值」的程式碼（例如 `if random.random() < 0.2: val = \"\"`）。\n    (3). **無論當下是生成「正確樣態」還是「異常樣態的未破壞欄位」，都請忠實保留此空值的隨機分佈狀態，以貼近真實資料庫樣貌。**\n\
+            \n4. 【手冊解析與防截斷硬編碼 (Parsing & Anti-Truncation)】\n  * 【純邏輯映射策略】：請直接在腦中解析手冊規則，並將萃取出的代碼手動轉化為單純的\
+            \ Python List 寫入程式碼中，請省略撰寫任何自訂解析函數（如 `parse_markdown_table`）。\n  * 【精簡編碼策略】：若手冊清單項目超過\
+            \ 30 個，請確保只隨機挑選 20 到 30 個代碼放入 List 作為代表即可，以保持程式碼精簡，防止 Token 截斷報錯，並省略將手冊原文直接貼入變數的行為。\n\
+            \  * 【單行字串規範】：為了從物理層面確保程式碼安全，產出的程式碼中請一律且唯一使用單行引號（`'` 或 `\"`）來宣告字串，並省略三個引號（`\"\
+            \"\"` 或 `'''`）的使用。\n\n5. 【無代碼表之動態生成與去機敏化 (Dynamic Generation & De-sensitization)】\n\
+            \  * **【高度機敏個資強制遮罩 (PII Masking)】（極度重要）：**\n    (1). **身分證字號與性別連動 (100%防禦機制)**：遇到身分證相關欄位，請隨機生成首碼英文。【執行順序極度重要】：請務必在程式碼「單筆資料生成的迴圈一開始」，就先檢查並決定好該列的「性別\
+            \ (GENDER/SEX)」數值並暫存！接著，身分證的「第二碼 (性別碼)」請嚴格與該暫存的性別值連動。然後利用固定字典轉換英文字母。計算加權總和求出正確檢查碼\
+            \ `correct_chk`。最後，【請一律從 0~9 中隨機挑選一個不等於 correct_chk 的數字作為最後一碼】拼接產出，確保其具備無效的檢核特性。\n\
+            \    (2). **電話號碼**：電話或手機欄位請一律生成包含大寫 'X' 遮罩的虛擬號碼（例如：`f\"09{random.randint(0,9)}XXXX{random.randint(0,999):03d}\"\
+            `）。\n    (3). **地址 (Address)**：地址相關欄位請一律且唯一使用「某縣市某區某路」作為虛擬開頭格式，後接隨機數字與字母組合。\n\
+            \  * **【智能語意推斷與常識連動】**：遇到具有明確現實意義的欄位（如：年、月、週、日期、時間、信箱等），請自動解鎖你的常識，自行以\
+            \ Python 程式邏輯生成符合現實的合理格式（如：年份生成 '2023'），並維持它們之間的連動關係。\n  * **【絕對安全日期生成\
+            \ (Safe Date Generation)】：生成隨機日期時，請一律使用定義基礎日期物件（例如 `base_date = datetime.datetime(2020,\
+            \ 1, 1)`）並加上 `datetime.timedelta(days=random.randint(0, 2000))` 的方式來推算，確保日曆的合法性與安全，完成推算後再進行字串格式化。**\n\
+            \  * **【普通欄位去機敏化】**：對於未提及代碼且毫無特徵的普通字串欄位，請一律直接動態生成中性內容（如：`NAME_001`, `ADDRESS_001`），以確保資料完美去識別化。\n\
+            \n6. 【極度重要：輸出規範與防呆交卷機制】\n  * 【絕對純代碼輸出】：你的回答將直接交由 Python 執行器讀取！請確保輸出內容\
+            \ 100% 為可直接執行的純 Python 程式碼，並省略所有 Markdown 標籤、開頭問候或思考標籤，以確保系統順利解析。\n  *\
+            \ 請將 `target_count` 與 `accuracy_rate` 直接以具體數值寫死於程式碼中。\n  * 【安全寫入與逗號防護\
+            \ (Safe CSV Writing)】：為了維持 CSV 欄位對齊，請一律且唯一在準備好單列陣列資料後，使用原生 `csv.writer(output).writerow(row_values)`\
+            \ 將陣列寫入，以確保字串保護與資料格式 100% 穩定，並省略使用 `','.join(...)` 進行字串拼接。\n  * 【正則表達式與跳脫字元防護\
+            \ (Regex Escape Safety)】：若程式碼中需使用正則表達式（如 `re` 模組）或任何包含 `\\d`, `\\w`, `\\\
+            s` 等跳脫字元的字串，請【一律且唯一】使用 Raw String 格式宣告（例如：`r'\\d+'`），以維持語法安全並省略一般字串宣告（如\
+            \ `'\\d+'`）。\n  * 【致命錯誤防護：安全字典讀取】：當你在程式碼中讀取 `schema` 字典的屬性時，請一律強制使用 `.get('key',\
+            \ default)` 方法（例如：`col.get('length')`），以確保 100% 避免 `KeyError`。\n* 【強制型別安全與數學運算防禦\
+            \ (TypeError 與 ValueError 崩潰防護)】：\n    (1). 空值轉型防護：處理可能為空值的變數時，轉型前請務必實作安全預設值（例如：`int(val\
+            \ if val else 0)` 或 `float(val if val else 0)`），以維持正確型態。\n    (2). 數學運算防護\
+            \ (針對 unsupported operand type)：在進行加減乘除 (`-`, `+`) 或邏輯比較 (`>`, `<`) 時，運算前【兩邊的變數都必須確實轉型】為數值，例如嚴格寫成：`int(A\
+            \ if A else 0) - int(B if B else 0)`。\n    (3). 亂數範圍防護 (極度重要)：若將變數用於 `random.randint(min,\
+            \ max)` 等範圍計算，請務必確保 max 大於等於 min（例如使用 `max(min_val, calculated_max)` 來保底），以徹底避免\
+            \ `empty range for randrange()` 導致系統崩潰。\n    (4). 日期運算與格式化 (正向安全路徑)：進行日期推算時，請【一律確保】參與運算的變數保持為\
+            \ `datetime.datetime` 或 `datetime.date` 原生物件來進行 `timedelta` 加減。運算完成後，請【直接且唯一使用】\
+            \ `.strftime('%Y-%m-%d')` 將最終物件轉換為字串並寫入資料列。這是唯一允許的日期處理路徑，請直接將物件轉為字串，藉此保持型別的\
+            \ 100% 絕對安全。\n    (5). 串列操作與資料新增 (List Append 安全路徑)：在建構資料列或操作陣列 (List)\
+            \ 時，若要將單一變數（如字串或數字）加入陣列中，請【一律且唯一使用】 `.append(value)` 方法。若是合併多項資料，請明確將所有項目包裹在方括號中形成陣列（如\
+            \ `[A, B] + [C, D]`）。請一律透過這兩種標準陣列操作法來組合資料，以確保資料結構 100% 穩定。\n  * 【容錯與保證輸出\
+            \ (Try-Except Guarantee)】：你撰寫的所有主要邏輯，必須被包裝在最外層的 `try...except Exception\
+            \ as e:` 區塊中。請省略 `global` 關鍵字的宣告，直接為 `result` 變數賦值即可，系統會自動讀取它。若成功，請在 try\
+            \ 區塊最後寫 `result = output.getvalue()`；若發生例外錯誤，請在 except 區塊中寫 `result =\
+            \ f\"【程式邏輯崩潰】: {str(e)}\"`。系統將唯一讀取此 `result` 變數作為最終產出，請務必確保完成賦值。\n  *\
+            \ 【單行引號與註解規範】：宣告字串時，請一律且唯一使用在單行內閉合的單引號 `'` 或雙引號 `\"`。若需加上說明，請一律使用單行 `#`\
+            \ 註解，以確保字串格式 100% 安全閉合。並請省略貼入 Schema、SQL 或手冊原文作為多行註解的行為。\n\n7. 【主鍵自動辨識與唯一性防護\
+            \ (Dynamic PK Uniqueness & Early Exit)】\n  * 【自動解析 PK】：請從「資料表結構定義」或「特定欄位限制及資料破壞規則」中找出主鍵欄位，視為單一或複合主鍵。\n\
+            \  * **【流水號優先策略】：若主鍵包含毫無關聯限制的普通字串或整數（如 USER_ID、SEQ_NO 等），請優先結合迴圈 index\
+            \ (流水號) 來生成（例如：`f\"ID_{i:05d}\"`），以 O(1) 效率保證絕對唯一。**\n  * 【防卡死與提早交卷機制\
+            \ (Early Exit)】：若主鍵全由具備特定格式或範圍限制的欄位組成，你必須在迴圈外建立足夠大的「基礎亂數池」，並將隨機抽取邏輯寫在\
+            \ `while True` 內部組合 Tuple 查重。實作 `retry_count`，若單筆資料連續碰撞超過 100 次，代表「合法的排列組合已經耗盡」。此時請直接\
+            \ `break` 終止最外層的大迴圈（提早交卷），寧可最終產出筆數少於 `target_count`，也請務必保留目前已成功生成的資料陣列並順利結束程式。"
+        - id: 2ed1eb50-3c9c-4f13-8ec8-6d0968b886f1
+          role: user
+          text: "# Input Specifications\n\n## 1. 結構與欄位定義 (Structure) - 【資料表結構定義】(支援\
+            \ SQL 語法或白話文描述):{{#1770959733651.table_schema#}}\n\n## 2. 補充約束與代碼表 (Constraints\
+            \ & Reference Data)\n{{#1770959733651.reference_manual#}}\n\n## 3. 生成目標\
+            \ (Target Volume)\n- 目標總筆數：{{#1770959733651.target_count#}} 筆\n- 資料正確率：{{#1770959733651.accuracy_rate#}}\
+            \ %\n---\n\n# Execution Task\n\n請根據上述輸入撰寫一段「純 Python 程式碼」來執行以下任務：\n\n\
+            1. 【結構解析與語意推斷】： \n- 優先參考「資料表結構定義」。 \n- 若使用者提供的是「白話文描述」（例如：包含病例編號、起始時間等），請發揮資料工程師的專業，自動推斷最適合的英文字母欄位名稱（如\
+            \ record_id, start_time）與資料庫資料型別（如 VARCHAR, DATETIME）。 \n- 嚴格遵守推斷後或 SQL\
+            \ 定義的欄位順序與資料型態。生成的 CSV 標題列必須與 Schema 完全對齊。\n\"請特別注意解析上傳檔案中的*「資料描述」或「備註」*欄位，將其中的文字說明（如：不會小於0、特定的代碼對應）轉換為生成資料的嚴格約束條件。\"\
+            \n\n2. 【精確比例與異常模擬邏輯】： \n- 禁止使用獨立隨機機率。請使用以下「洗牌邏輯」確保精確比例： 先計算 `correct_count\
+            \ = int(target_count * ({{開始.accuracy_rate}} / 100))`。 建立並打亂狀態清單：`status_list\
+            \ = ['correct'] * correct_count + ['error'] * (target_count - correct_count)`，接著使用\
+            \ `random.shuffle(status_list)`。 \n- 在生成迴圈中，依據 `status_list` 的當前狀態決定生成樣態。\
+            \ \n- **正確樣態**：生成完全符合 Schema 與約束規則的完美資料。 \n- **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成一筆異常資料列時，請在程式碼中實作「隨機挑選\
+            \ 1 到 2 個」有明確受到「手動限制」或「參考手冊與規格說明 (reference_manual)」約束的特定欄位進行破壞（例如：刻意違反手冊中定義的長度、格式或數值範圍）。該異常列中的「其餘所有欄位」（包含未受限的普通欄位，以及未被抽中破壞的受限欄位），都**必須保持\
+            \ 100% 格式與邏輯正確**。絕對禁止在同一筆資料中將所有受限欄位一次全部破壞。\n\n3. 【資料去機敏化 (Neutral Data)】：\
+            \ \n- 排除任何特定業務色彩。除非「補充約束」有特別指定內容，否則文字欄位統一使用「欄位名_序號」格式（例如：NAME_001, CODE_A_1）。\n\
+            \ - 日期欄位統一使用 `YYYY-MM-DD` 格式。 \n\n4. 【硬編碼處理 (Hardcoding)】： \n- 將目標筆數、正確率，與任何來自「補充約束」的代碼清單直接「寫死\
+            \ (Hardcode)」在 Python 變數中。\n - **禁止**在產出的 Python 代碼中使用 Dify 的 `{{...}}`\
+            \ 語法。\n\n 5. 【輸出規範】： \n- 僅輸出 Python 代碼，不包含 Markdown 標籤與解釋。 \n- 確保最終 CSV\
+            \ 字串賦值給 `result` 全局變數。 \n\n# 開始撰寫代碼"
+        selected: false
+        structured_output_enabled: false
+        title: LLM_No_file
+        type: llm
+        vision:
+          enabled: false
+      height: 124
+      id: '17709700839860'
+      position:
+        x: 1087.2902776455142
+        y: 458.69927826914176
+      positionAbsolute:
+        x: 1087.2902776455142
+        y: 458.69927826914176
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        output_type: string
+        selected: false
+        title: 變數聚合器
+        type: variable-aggregator
+        variables:
+        - - '17709700839860'
+          - text
+        - - '1771814876931'
+          - text
+        - - '17719018264720'
+          - text
+        - - '17719018131900'
+          - text
+      height: 187
+      id: '1770970857873'
+      position:
+        x: 1645.7204989630325
+        y: 259.8615008068425
+      positionAbsolute:
+        x: 1645.7204989630325
+        y: 259.8615008068425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        error_strategy: fail-branch
+        model:
+          completion_params:
+            max_output_tokens: 65536
+            temperature: 0.5
+          mode: chat
+          name: gemini-2.5-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 250fe045-8fdd-4b25-b8c9-b41a56b321da
+          role: system
+          text: "# Role\n\n你是一位專精於「去識別化測試資料」與「異常資料精確模擬 (Exact Ratio Negative Testing)」的\
+            \ Python 資料工程師。\n\n# Task\n\n根據使用者提供的「資料表結構定義（含規格文件）」與「代碼表檔案內容 / 特定欄位限制及資料破壞規則\
+            \ (reference_manual)」，撰寫一段純 Python 程式碼。該程式碼需能根據「正確率 (accuracy_rate)」參數，以絕對精準的比例，動態生成包含正常與異常樣態的測試資料。\n\
+            \n# Rules (極度重要)\n\n1. 【技術限制】\n  * 請僅限且完全使用 Python 內建標準庫（如：`csv`, `random`,\
+            \ `datetime`, `string`, `io`, `re`）來實作所有邏輯，確保程式碼具備 100% 的原生獨立性，並省略所有外部第三方套件（如\
+            \ pandas、faker）的呼叫。\n\n2. 【精確比例控制 (Exact Ratio Control)】\n  * 請一律透過建立狀態清單並洗牌\
+            \ (status_list + shuffle) 的方式，來精準控制每一筆資料的正確與否狀態。\n  * 必須根據 `target_count`\
+            \ 與 `accuracy_rate` 計算出精確的正確與異常筆數。請務必先對 `accuracy_rate` 進行範圍安全校正，例如：`safe_rate\
+            \ = max(0, min(100, float(accuracy_rate)))`，接著再計算：`correct_count = int(target_count\
+            \ * (safe_rate / 100))`。\n  * **正確樣態 (Valid Data)**：嚴格遵守 Schema 骨架、規格文件與「代碼表/手動限制」。【極度重要】若限制中包含「跨欄位關聯（如\
+            \ C=0時D必為空）」或「數學比較（如 A > B）」，請務必在生成基底資料時，實作對應的 `if/else` 條件式來進行「連動生成」，以確保資料邏輯的絕對合理，維持精確的正確率。\n\
+            \  * **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成異常資料列時，請確保僅挑選「\
+            \ 1 到 2 個」有受到約束的特定欄位進行破壞（例如：數值設為極端邊界值如 -1，或刻意選取不在代碼表內的無效字串）。**注意：即使是刻意生成的錯誤代碼或無效字串，也請務必確保其長度維持在規格書定義的最大長度限制內**。針對該異常列中的「其餘所有欄位」（包含未抽中破壞的欄位），請務必維持\
+            \ 100% 格式與邏輯正確。\n\n3. 【結構解析與規格疊加】\n  * 優先參考「資料表結構定義」建立基礎骨架。若為白話文描述，請自動推斷合適的英文欄位名稱與資料庫型別。\n\
+            \  * 必須將「結構規格文件」中定義的具體限制（如長度、範圍）疊加套用至骨架中。生成的 CSV 標題列必須與之完全對齊。\n  * **【空值\
+            \ (NULL) 嚴格約束與隨機性保證】**：\n    1. **必填欄位**：若該欄位標記為 'N'（代表 NOT NULL / 絕對必填），請確保強制產出有效值。\n\
+            \    2. **允許空值欄位 (極度重要)**：若該欄位允許空值，請你務必在生成邏輯中，確實實作「10%~20% 隨機生成空值」的程式碼（例如\
+            \ `if random.random() < 0.2: val = \"\"`）。\n    3. **無論當下是生成「正確樣態」還是「異常樣態的未破壞欄位」，都請忠實保留此空值的隨機分佈狀態，以貼近真實資料庫樣貌。**\n\
+            \n4. 【動態資料載入與防截斷絕對防護 (Dynamic Loading & Anti-Truncation)】\n  * 【強制起手式規範\
+            \ (Boilerplate Requirement)】：系統底層已自動注入了名為 `reference_csv_data` 的全域變數字串。請確保你的\
+            \ Python 程式碼在 `import` 區塊結束後，直接且唯一使用以下寫法作為開頭，請完全省略宣告資料變數的行為：\n    `reader\
+            \ = csv.DictReader(io.StringIO(reference_csv_data))`\n    `# 接著使用 for\
+            \ row in reader: 將需要的欄位萃取成 List`\n  * 【嚴禁宣告原始資料 (Fatal Error 防護)】：請確保你的程式碼中【絕對沒有】出現\
+            \ `reference_csv_data = ...` 的賦值語句。請一律省略將表格範例當作字串貼上程式碼的行為，以免引發 Token 截斷與系統崩潰。\n\
+            \  * 【絕對禁止多行字串與長陣列】：為了徹底從物理層面防止截斷錯誤，產出的程式碼中請一律使用單行引號（`'` 或 `\"`）來宣告字串，並【確保不准】出現三個引號（`\"\
+            \"\"` 或 `'''`）。靜態陣列的元素數量請確保維持在 5 個以內。\n  * 【無代碼表之動態生成 (Fallback Generation)】：若特定欄位在\
+            \ `reference_csv_data` 中沒有對應的代碼可供抽取，或該變數為空字串，請自動切換為「常理動態推斷」，結合 Python\
+            \ 內建函式（如 `random.choices`）即時生成擬真資料。\n\n5. 【無代碼表之動態生成與去機敏化 (Dynamic Generation\
+            \ & De-sensitization)】\n  * **【高度機敏個資強制遮罩 (PII Masking)】（極度重要）：**\n  \
+            \  1. **身分證字號與性別連動 (100%防禦機制)**：遇到身分證相關欄位，請隨機生成首碼英文。【執行順序極度重要】：請務必在程式碼「單筆資料生成的迴圈一開始」，就先檢查並決定好該列的「性別\
+            \ (GENDER/SEX)」數值並暫存！接著，身分證的「第二碼 (性別碼)」請嚴格與該暫存的性別值連動。然後利用固定字典轉換英文字母。計算加權總和求出正確檢查碼\
+            \ `correct_chk`。最後，【請一律從 0~9 中隨機挑選一個不等於 correct_chk 的數字作為最後一碼】拼接產出，確保其具備無效的檢核特性。\n\
+            \    2. **電話號碼**：電話或手機欄位請一律生成包含大寫 'X' 遮罩的虛擬號碼（例如：`f\"09{random.randint(0,9)}XXXX{random.randint(0,999):03d}\"\
+            `）。\n    3. **地址 (Address)**：地址相關欄位請一律且唯一使用「某縣市某區某路」作為虛擬開頭格式，後接隨機數字與字母組合。\n\
+            \  * **【智能語意推斷與常識連動】**：遇到具有明確現實意義的欄位名稱（如：年、月、日期、時間等），請自動以 Python 邏輯生成符合現實的具體格式，並維持它們之間的連動關係。\n\
+            \  * **【絕對安全日期生成 (Safe Date Generation)】：生成隨機日期時，請一律使用定義基礎日期物件（例如 `base_date\
+            \ = datetime.datetime(2020, 1, 1)`）並加上 `datetime.timedelta(days=random.randint(0,\
+            \ 2000))` 的方式來推算，確保日曆的合法性與安全，完成推算後再進行字串格式化。**\n  * **【普通欄位去機敏化】**：對於毫無特徵的普通字串欄位（如備註、姓名、一般代碼等），請一律使用中性字串（如：`NAME_001`,\
+            \ `ID_A001`）進行填充。\n\n6. 【極度重要：輸出規範與防呆交卷機制】\n  * 【絕對純代碼輸出】：你的回答將直接交由 Python\
+            \ 執行器讀取！請確保輸出內容 100% 為可直接執行的純 Python 程式碼，並省略所有 Markdown 標籤 (例如 ```python)、開頭問候或思考標籤，以確保系統順利解析。\n\
+            \  * 請將 `target_count` 與 `accuracy_rate` 直接以具體數值寫死於程式碼中。\n  * 【安全寫入與逗號防護\
+            \ (Safe CSV Writing)】：為了防止資料（如地址、備註）中包含逗號導致 CSV 欄位錯位，【絕對禁止】使用 `','.join(...)`\
+            \ 進行字串拼接！請一律且唯一在準備好單列陣列資料後，使用原生 `csv.writer(output).writerow(row_values)`\
+            \ 將陣列寫入，以確保字串保護與資料格式 100% 穩定。\n  * 【正則表達式與跳脫字元防護 (Regex Escape Safety)】：若程式碼中需使用正則表達式（如\
+            \ `re` 模組）或任何包含 `\\d`, `\\w`, `\\s` 等跳脫字元的字串，請【一律且唯一】使用 Raw String 格式宣告（例如：`r'\\\
+            d+'`），絕對禁止使用一般字串宣告（如 `'\\d+'`），以徹底根絕 Invalid escape sequence 導致的語法崩潰！\n\
+            \  * 【安全字典讀取 (Safe Dictionary Access)】：當你在程式碼中建構與讀取欄位屬性字典（如判斷 is_pk、nullable）時，請一律強制使用\
+            \ `.get('key', default)` 方法（例如：`col.get('is_pk', False)`），以確保 100% 避免\
+            \ KeyError。\n* 【強制型別安全與數學運算防禦 (TypeError 與 ValueError 崩潰防護)】：\n    (1).\
+            \ 空值轉型防護：處理可能為空值的變數時，轉型前請務必實作安全預設值（例如：`int(val if val else 0)` 或 `float(val\
+            \ if val else 0)`），以維持正確型態。\n    (2). 數學運算防護 (針對 unsupported operand type)：在進行加減乘除\
+            \ (`-`, `+`) 或邏輯比較 (`>`, `<`) 時，運算前【兩邊的變數都必須確實轉型】為數值，例如嚴格寫成：`int(A if\
+            \ A else 0) - int(B if B else 0)`。\n    (3). 亂數範圍防護 (極度重要)：若將變數用於 `random.randint(min,\
+            \ max)` 等範圍計算，請務必確保 max 大於等於 min（例如使用 `max(min_val, calculated_max)` 來保底），以徹底避免\
+            \ `empty range for randrange()` 導致系統崩潰。\n    (4). 日期運算與格式化 (正向安全路徑)：進行日期推算時，請【一律確保】參與運算的變數保持為\
+            \ `datetime.datetime` 或 `datetime.date` 原生物件來進行 `timedelta` 加減。運算完成後，請【直接且唯一使用】\
+            \ `.strftime('%Y-%m-%d')` 將最終物件轉換為字串並寫入資料列。這是唯一允許的日期處理路徑，請直接將物件轉為字串，藉此保持型別的\
+            \ 100% 絕對安全。\n    (5). 串列操作與資料新增 (List Append 安全路徑)：在建構資料列或操作陣列 (List)\
+            \ 時，若要將單一變數（如字串或數字）加入陣列中，請【一律且唯一使用】 `.append(value)` 方法。若是合併多項資料，請明確將所有項目包裹在方括號中形成陣列（如\
+            \ `[A, B] + [C, D]`）。請一律透過這兩種標準陣列操作法來組合資料，以確保資料結構 100% 穩定。\n  * 【全域容錯與保證輸出\
+            \ (Try-Except Guarantee)】：你撰寫的所有主要邏輯，必須被包裝在最外層的 `try...except Exception\
+            \ as e:` 區塊中。請務必在最後宣告一個名為 `result` 的全域變數並進行賦值。若成功，`result = output.getvalue()`；若失敗，`result\
+            \ = f\"【程式邏輯崩潰】: {str(e)}\"`。系統將唯一讀取此 `result` 變數作為最終產出。\n  * 【單行引號與註解規範】：宣告字串時，請一律且唯一使用在單行內閉合的單引號\
+            \ `'` 或雙引號 `\"`。若需加上說明，請一律使用單行 `#` 註解，以確保字串格式 100% 安全閉合。\n\n7. 【主鍵唯一性防護\
+            \ (Primary Key Uniqueness)】\n  * 【自動解析 PK】：請仔細閱讀規格，找出標記為主鍵（如 'Y'）的欄位，視為單一或複合主鍵。\n\
+            \  * **【流水號優先策略】：若主鍵包含毫無關聯限制的普通字串或整數（如 RECORD_ID、SEQ_NO），請優先結合迴圈 index\
+            \ (流水號) 來生成（例如：`f\"ID_{i:05d}\"`），以 O(1) 效率保證絕對唯一。**\n  * 【關聯欄位絕對保真】：若主鍵包含代碼欄位（如疾病、縣市等），請確保其數值\
+            \ 100% 完全從你擷取的合法清單中抽取，維持原生代碼樣態。\n  * 【防卡死與提早交卷機制 (Early Exit)】：將隨機抽取邏輯寫在\
+            \ `while True` 內部並組合 Tuple 查重。實作重試計數器 `retry_count`，若單筆資料連續碰撞超過 100 次，代表「合法的排列組合已經被耗盡」。此時請直接\
+            \ `break` 終止最外層的資料生成大迴圈（提早交卷），保留目前已成功生成的資料陣列即可。寧可最終產出筆數少於 `target_count`，也請務必確保所有產出的代碼皆\
+            \ 100% 符合外部鍵關聯邏輯！"
+        - id: c1eb32e8-4009-4e97-a0a8-66debfb71688
+          role: user
+          text: "# Input Specifications\n\n## 1. 結構與欄位定義 (Structure)\n- 【資料表結構定義】(支援\
+            \ SQL 語法或白話文描述): {{#1770959733651.table_schema#}}\n- 【結構規格文件】(來自 Schema\
+            \ 提取器): {{#1771902295501.text#}}\n\n## 2. 數據關聯與約束 (Constraints)\n- 【代碼表檔案內容】(來自\
+            \ Reference 提取器): {{#1771902302816.text#}}\n- 【手動特殊限制描述】: {{#1770959733651.reference_manual#}}\n\
+            \n## 3. 生成目標 (Goal)\n- 目標總筆數：{{#1770959733651.target_count#}} 筆\n- 資料正確率\
+            \ (accuracy_rate)：{{#1770959733651.accuracy_rate#}} %\n\n---\n\n# Execution\
+            \ Task\n\n請根據上述輸入撰寫一段「純 Python 程式碼」來執行以下任務：\n\n1. 【結構解析與規格疊加】： \n- 基礎骨架建立：優先參考「資料表結構定義」。若使用者提供的是「白話文描述」（例如：包含病例編號、起始時間等），請發揮資料工程師的專業，自動推斷最適合的英文字母欄位名稱（如\
+            \ record_id, start_time）與資料庫資料型別（如 VARCHAR, DATETIME）。\n- 規格細節疊加：必須將「結構規格文件」中定義的具體限制（例如：特定的字串長度、日期格式、數值範圍上限等），疊加套用至上述解析出的基礎骨架中。\
+            \ \n- 嚴格遵守推斷並疊加規格後的最終欄位順序與型態，生成的 CSV 標題列必須與之完全對齊。\n\"請特別注意解析上傳檔案中的*「資料描述」或「備註」*欄位，將其中的文字說明（如：不會小於0、特定的代碼對應）轉換為生成資料的嚴格約束條件。\"\
+            \n\n 2. 【精確比例與異常模擬邏輯】： \n- **禁止**使用獨立隨機機率（如 `random.randint`）。請務必使用以下「洗牌邏輯」確保精確比例：\
+            \ 先計算 `correct_count = int({{#1770959733651.target_count#}} * ({{#1770959733651.accuracy_rate#}}\
+            \ / 100))`。 建立並打亂狀態清單：`status_list = ['correct'] * correct_count + ['error']\
+            \ * ({{#1770959733651.target_count#}}- correct_count)`，接著使用 `random.shuffle(status_list)`。\n\
+            \ - 在生成迴圈中，依據 `status_list` 的當前狀態決定生成樣態。 \n- **正確樣態**：依照 Schema、約束與解析後的代碼表，生成符合規範的資料。\n\
+            - **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成一筆異常資料列時，請在程式碼中實作「隨機挑選\
+            \ 1 到 2 個」有受到約束（如手動限制、規格書描述或代碼表）的欄位進行破壞（例如：將規格要求「不會小於0」的數值設為 -1，或將「1~5」的範圍設為\
+            \ 9）。該異常列中的「其餘所有欄位」（包含未受限欄位，以及未被抽中破壞的受限欄位），都**必須保持 100% 格式與邏輯正確**。絕對禁止在同一筆資料中將所有受限欄位一次全部破壞。\n\
+            3. 【數據硬編碼 (Hardcoding)】：\n - 必須解析「代碼表檔案內容」中的 ID 或代碼，並將其 Hardcode 在 Python\
+            \ 清單中。\n - 若檔案內容為空，則以「手動特殊限制」中的規則為準。 \n- 禁止在程式碼中使用 Dify 的 `{{...}}` 佔位符。\n\
+            \ 4. 【去機敏化數據生成】： \n- 內容需保持中性，文字欄位優先使用「欄位名_序號」（如：NAME_001）。\n - 確保 CSV\
+            \ 標題列與解析後的 Schema 完全一致。 \n5. 【技術規範】： \n- 僅輸出 Python 代碼，不包含任何 Markdown\
+            \ 標籤或解釋。 \n- 最終生成的 CSV 字串必須存入全局變數 `result`。 \n\n# 開始撰寫代碼"
+        selected: true
+        title: LLM_Both_Files
+        type: llm
+        vision:
+          enabled: false
+      height: 124
+      id: '1771814876931'
+      position:
+        x: 1087.2902776455142
+        y: -213.9154043655995
+      positionAbsolute:
+        x: 1087.2902776455142
+        y: -213.9154043655995
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        is_array_file: false
+        selected: false
+        title: Reference Extractor_R
+        type: document-extractor
+        variable_selector:
+        - '1770959733651'
+        - reference_file
+      height: 104
+      id: '1771818070906'
+      position:
+        x: 258.09305440103606
+        y: -18.58870645205232
+      positionAbsolute:
+        x: 258.09305440103606
+        y: -18.58870645205232
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        error_strategy: fail-branch
+        model:
+          completion_params:
+            temperature: 0.5
+          mode: chat
+          name: gemini-2.5-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 250fe045-8fdd-4b25-b8c9-b41a56b321da
+          role: system
+          text: "# Role\n\n你是一位專精於「去識別化測試資料」與「異常資料精確模擬 (Exact Ratio Negative Testing)」的\
+            \ Python 資料工程師。\n\n# Task\n\n根據使用者提供的「SQL Schema」與「結構規格文件內容」，撰寫一段純 Python\
+            \ 程式碼。該程式碼需能根據「正確率 (accuracy_rate)」參數，以絕對精準的比例，動態生成測試資料。\n\n# Rules (極度重要)\n\
+            \n1. 【技術限制】\n  * 請僅限且完全使用 Python 內建標準庫（如：`csv`, `random`, `datetime`,\
+            \ `string`, `io`, `re`）來實作所有邏輯，確保程式碼具備 100% 的原生獨立性，並省略所有外部第三方套件（如 pandas、faker）的呼叫。\n\
+            \n2. 【精確比例控制 (Exact Ratio Control)】\n  * 請一律透過建立狀態清單並洗牌 (status_list +\
+            \ shuffle) 的方式，來精準控制每一筆資料的正確與否狀態。\n  * 必須根據 `target_count` 與 `accuracy_rate`\
+            \ 計算出精確的正確與異常筆數。請務必先對 `accuracy_rate` 進行範圍安全校正，例如：`safe_rate = max(0,\
+            \ min(100, float(accuracy_rate)))`，接著再計算：`correct_count = int(target_count\
+            \ * (safe_rate / 100))`。\n  * **正確樣態 (Valid Data)**：嚴格遵守 Schema 骨架、手動限制條件與「結構規格文件」中的格式細節來動態生成資料。【極度重要】若限制中包含「跨欄位關聯（如\
+            \ C=0時D必為空）」或「數學比較（如 A > B）」，請務必在生成基底資料時，實作對應的 `if/else` 條件式來進行「連動生成」，以確保資料邏輯的絕對合理，維持精確的正確率。\n\
+            \  * **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成異常資料列時，請確保僅挑選「\
+            \ 1 到 2 個」有受到約束的特定欄位進行破壞（例如：將規格要求「不會小於 0」的數值設為 -1，或將「1~5」的範圍設為 9）。**注意：即使是刻意生成的錯誤代碼或無效字串，也請務必確保其長度維持在規格書定義的最大長度限制內**。針對該異常列中的「其餘所有欄位」（包含未抽中破壞的受限欄位），請務必維持\
+            \ 100% 格式與邏輯正確，以實現局部精準破壞。\n\n3. 【結構解析與優先級 (Schema Parsing & Priority)】\n\
+            \  * 欄位架構優先以「SQL Schema」為準建立基礎骨架。\n  * 必須將「結構規格文件」中定義的具體限制（如長度、範圍、資料型別）疊加套用至骨架中。生成的\
+            \ CSV 標題列必須與之完全對齊。\n  * 【異常樣態定義】：需保證型態安全（Type Safety），但進行邏輯破壞（如日期超界、數值範圍錯誤、不合邏輯之邊界值等）。\n\
+            \  * **【空值 (NULL) 嚴格約束與隨機性保證】**：\n    (1). **必填欄位**：請仔細檢查規格文件中的「NULL」或「必填」欄位標示。若該欄位標記為\
+            \ 'N'（代表 NOT NULL / 絕對必填），請確保強制產出符合型態的有效值。\n    (2). **允許空值欄位 (極度重要)**：若無明確標示\
+            \ NOT NULL 則視為允許空值，請你務必在生成邏輯中，確實實作「10%~20% 隨機生成空值」的程式碼（例如 `if random.random()\
+            \ < 0.2: val = \"\"`）。\n    (3). **無論當下是生成「正確樣態」還是「異常樣態的未破壞欄位」，都請忠實保留此空值的隨機分佈狀態，以貼近真實資料庫樣貌。**\n\
+            \n4. 【防截斷與硬編碼限制 (Anti-Truncation & Hardcoding Limits)】\n  * 【純邏輯映射策略】：請直接在腦中閱讀並理解規格文件，並將所有限制條件手動轉換為單純的\
+            \ Python 生成邏輯寫入程式碼中，請省略所有讀取與解析原始規格表的自訂函數（如 `parse_markdown_table` 或 `parse_csv`）。\n\
+            \  * 【精簡編碼策略】：請確保程式碼高度精簡，直接將規格轉化為 Python 的生成規則（如直接寫死長度限制、合法清單等），並省略將完整的\
+            \ SQL 語法或規格文件內容當作長字串變數貼入程式碼的行為。\n  * 【單行字串與微型陣列規範】：為了從物理層面確保程式碼安全，產出的程式碼中請一律且唯一使用單行引號（`'`\
+            \ 或 `\"`）來宣告字串，並省略三個引號（`\"\"\"` 或 `'''`）的使用。靜態陣列的元素數量請維持在 5 個以內。\n\n5.\
+            \ 【無代碼表之動態生成與去機敏化 (Dynamic Generation & De-sensitization)】\n  * **【高度機敏個資強制遮罩\
+            \ (PII Masking)】（極度重要）：**\n    (1). **身分證字號與性別連動 (100%防禦機制)**：遇到身分證相關欄位，請隨機生成首碼英文。【執行順序極度重要】：請務必在程式碼「單筆資料生成的迴圈一開始」，就先檢查並決定好該列的「性別\
+            \ (GENDER/SEX)」數值並暫存！接著，身分證的「第二碼 (性別碼)」請嚴格與該暫存的性別值連動。然後利用固定字典轉換英文字母。計算加權總和求出正確檢查碼\
+            \ `correct_chk`。最後，【請一律從 0~9 中隨機挑選一個不等於 correct_chk 的數字作為最後一碼】拼接產出，確保其具備無效的檢核特性。\n\
+            \    (2). **電話號碼**：電話或手機欄位請一律生成包含大寫 'X' 遮罩的虛擬號碼（例如：`f\"09{random.randint(0,9)}XXXX{random.randint(0,999):03d}\"\
+            `）。\n    (3). **地址 (Address)**：地址相關欄位請一律且唯一使用「某縣市某區某路」作為虛擬開頭格式，後接隨機數字與字母組合。\n\
+            \  * **【智能語意推斷與常識連動】**：本次「未提供」參考代碼表，遇到具有明確現實意義的欄位（如：年、月、週、日期、時間等），請自動解鎖你的常識，自行以\
+            \ Python 程式邏輯生成符合現實的合理格式（如：年份生成 '2023'、週數生成 '05'），並維持它們之間的連動關係。\n  * **【絕對安全日期生成\
+            \ (Safe Date Generation)】：生成隨機日期時，請一律使用定義基礎日期物件（例如 `base_date = datetime.datetime(2020,\
+            \ 1, 1)`）並加上 `datetime.timedelta(days=random.randint(0, 2000))` 的方式來推算，確保日曆的合法性與安全，完成推算後再進行字串格式化。**\n\
+            \  * **【普通欄位去機敏化】**：對於毫無特徵的普通字串欄位（如備註、姓名等），請一律使用中性字串（如：`NAME_001`）進行填充，以確保資料的去識別化。\n\
+            \n6. 【極度重要：輸出規範與防呆交卷機制】\n  * 【絕對純代碼輸出】：你的回答將直接交由 Python 執行器讀取！請確保輸出內容\
+            \ 100% 為可直接執行的純 Python 程式碼，並省略所有 Markdown 標籤、開頭問候或思考標籤，以確保系統順利解析。\n  *\
+            \ 請將 `target_count` 與 `accuracy_rate` 直接以具體數值寫死於程式碼中。\n  * 【安全寫入與逗號防護\
+            \ (Safe CSV Writing)】：為了維持 CSV 欄位對齊，請一律且唯一在準備好單列陣列資料後，使用原生 `csv.writer(output).writerow(row_values)`\
+            \ 將陣列寫入，以確保字串保護與資料格式 100% 穩定，並省略使用 `','.join(...)` 進行字串拼接。\n  * 【正則表達式與跳脫字元防護\
+            \ (Regex Escape Safety)】：若程式碼中需使用正則表達式（如 `re` 模組）或任何包含 `\\d`, `\\w`, `\\\
+            s` 等跳脫字元的字串，請【一律且唯一】使用 Raw String 格式宣告（例如：`r'\\d+'`），以維持語法安全並省略一般字串宣告（如\
+            \ `'\\d+'`）。\n  * 【安全字典讀取 (Safe Dictionary Access)】：當你在程式碼中建構與讀取欄位屬性字典（如判斷\
+            \ is_pk、nullable 或 length）時，請一律強制使用 `.get('key', default)` 方法（例如：`col.get('is_pk',\
+            \ False)`），以確保 100% 避免 `KeyError`。\n* 【強制型別安全與數學運算防禦 (TypeError 與 ValueError\
+            \ 崩潰防護)】：\n    (1). 空值轉型防護：處理可能為空值的變數時，轉型前請務必實作安全預設值（例如：`int(val if val\
+            \ else 0)` 或 `float(val if val else 0)`），以維持正確型態。\n    (2). 數學運算防護 (針對\
+            \ unsupported operand type)：在進行加減乘除 (`-`, `+`) 或邏輯比較 (`>`, `<`) 時，運算前【兩邊的變數都必須確實轉型】為數值，例如嚴格寫成：`int(A\
+            \ if A else 0) - int(B if B else 0)`。\n    (3). 亂數範圍防護 (極度重要)：若將變數用於 `random.randint(min,\
+            \ max)` 等範圍計算，請務必確保 max 大於等於 min（例如使用 `max(min_val, calculated_max)` 來保底），以徹底避免\
+            \ `empty range for randrange()` 導致系統崩潰。\n    (4). 日期運算與格式化 (正向安全路徑)：進行日期推算時，請【一律確保】參與運算的變數保持為\
+            \ `datetime.datetime` 或 `datetime.date` 原生物件來進行 `timedelta` 加減。運算完成後，請【直接且唯一使用】\
+            \ `.strftime('%Y-%m-%d')` 將最終物件轉換為字串並寫入資料列。這是唯一允許的日期處理路徑，請直接將物件轉為字串，藉此保持型別的\
+            \ 100% 絕對安全。\n    (5). 串列操作與資料新增 (List Append 安全路徑)：在建構資料列或操作陣列 (List)\
+            \ 時，若要將單一變數（如字串或數字）加入陣列中，請【一律且唯一使用】 `.append(value)` 方法。若是合併多項資料，請明確將所有項目包裹在方括號中形成陣列（如\
+            \ `[A, B] + [C, D]`）。請一律透過這兩種標準陣列操作法來組合資料，以確保資料結構 100% 穩定。\n  * 【全域容錯與保證輸出\
+            \ (Try-Except Guarantee)】：你撰寫的所有主要邏輯，必須被包裝在最外層的 `try...except Exception\
+            \ as e:` 區塊中。請省略 `global` 關鍵字的宣告，直接為 `result` 變數賦值即可，系統會自動讀取它。若成功，請在 try\
+            \ 區塊最後寫 `result = output.getvalue()`；若發生例外錯誤，請在 except 區塊中寫 `result =\
+            \ f\"【程式邏輯崩潰】: {str(e)}\"`。系統將唯一讀取此 `result` 變數作為最終產出，請務必確保完成賦值。\n  *\
+            \ 【單行引號與註解規範】：宣告字串時，請一律且唯一使用在單行內閉合的單引號 `'` 或雙引號 `\"`。若需加上說明，請一律使用單行 `#`\
+            \ 註解，以確保字串格式 100% 安全閉合。並請省略貼入 Schema、SQL 或手冊原文作為多行註解的行為。\n\n7. 【主鍵自動辨識與唯一性防護\
+            \ (Dynamic PK Uniqueness & Early Exit)】\n  * 【自動解析 PK】：請仔細閱讀規格，找出標記為 PRIMARY\
+            \ KEY、PK 或是白話文指明為主鍵的欄位，視為單一或複合主鍵。\n  * **【流水號優先策略】：若主鍵包含毫無關聯限制的普通字串或整數（如\
+            \ ID、SEQ_NO 等），請優先結合迴圈 index (流水號) 來生成（例如：`f\"ID_{i:05d}\"`），以 O(1) 效率保證絕對唯一。**\n\
+            \  * 【主鍵內容絕對保真】：若主鍵包含具備特定格式或範圍限制的欄位（如年份、特定分類碼等），請確保其數值 100% 完全遵循「結構規格文件」的定義動態生成，維持原生格式樣態。\n\
+            \  * 【防卡死與提早交卷機制 (Early Exit)】：若主鍵全由具備特定格式或範圍限制的欄位組成（如狀態碼+年份），必須在迴圈外建立足夠大的「基礎亂數池」，並將隨機抽取邏輯寫在\
+            \ `while True` 內部組合 Tuple 查重。實作 `retry_count`，若單筆資料連續碰撞超過 100 次，代表「合法的排列組合已經耗盡」。此時請直接\
+            \ `break` 終止最外層的大迴圈（提早交卷），寧可最終產出筆數少於 `target_count`，也請務必保留目前已成功生成的資料陣列並順利結束程式，確保產出符合外部鍵關聯邏輯！"
+        - id: c1eb32e8-4009-4e97-a0a8-66debfb71688
+          role: user
+          text: "# Input Specifications\n\n## 1. 結構與欄位定義 (Structure)\n- 【資料表結構定義】(支援\
+            \ SQL 語法或白話文描述): {{#1770959733651.table_schema#}}\n- 【結構規格文件】(來自 Schema\
+            \ 提取器): {{#1770963829894.text#}}\n\n## 2. 數據關聯與約束 (Constraints)\n- 【手動特殊限制描述】:\
+            \ {{#1770959733651.reference_manual#}}\n\n## 3. 生成目標 (Goal)\n- 目標總筆數：{{#1770959733651.target_count#}}筆\n\
+            - 資料正確率 (accuracy_rate)：{{#1770959733651.accuracy_rate#}} %\n\n---\n\n\
+            # Execution Task\n\n請根據上述輸入撰寫一段「純 Python 程式碼」來執行以下任務：\n\n1. 【結構解析與規格疊加】：\
+            \ \n- 基礎骨架建立：優先參考「資料表結構定義」。若使用者提供的是「白話文描述」（例如：包含病例編號、起始時間等），請發揮資料工程師的專業，自動推斷最適合的英文字母欄位名稱（如\
+            \ record_id, start_time）與資料庫資料型別（如 VARCHAR, DATETIME）。 \n- 規格細節疊加：必須將「結構規格文件」中定義的具體限制（例如：特定的字串長度、日期格式、數值範圍上限等），疊加套用至上述解析出的基礎骨架中。\
+            \ \n- 嚴格遵守推斷並疊加規格後的最終欄位順序與型態，生成的 CSV 標題列必須與之完全對齊。\n\"請特別注意解析上傳檔案中的*「資料描述」或「備註」*欄位，將其中的文字說明（如：不會小於0、特定的代碼對應）轉換為生成資料的嚴格約束條件。\"\
+            \n\n 2. 【精確比例與異常模擬邏輯】：\n - **禁止**使用獨立隨機機率（如 `random.randint`）。請務必使用以下「洗牌邏輯」確保精確比例：\
+            \ 先計算 `correct_count = int({{開始.target_count}} * ({{開始.accuracy_rate}}\
+            \ / 100))`。 建立並打亂狀態清單：`status_list = ['correct'] * correct_count + ['error']\
+            \ * ({{開始.target_count}} - correct_count)`，接著使用 `random.shuffle(status_list)`。\
+            \ \n- 在生成迴圈中，依據 `status_list` 的當前狀態決定生成樣態。 \n- **正確樣態**：依照 Schema 與規格文件的格式限制，動態生成符合規範的合法資料。\n\
+            \ - **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成一筆異常資料列時，請在程式碼中實作「隨機挑選\
+            \ 1 到 2 個」有受到約束（如手動限制或規格書描述）的欄位進行破壞（例如：將規格要求「不會小於0」的數值設為 -1，或將「1~5」的範圍設為\
+            \ 9）。該異常列中的「其餘所有欄位」（包含未受限欄位，以及未被抽中破壞的受限欄位），都**必須保持 100% 格式與邏輯正確**。絕對禁止在同一筆資料中將所有受限欄位一次全部破壞。\n\
+            3. 【數據動態生成 (Dynamic Generation)】： \n- 本次未提供參考代碼表，請根據欄位定義與手動限制，使用 Python\
+            \ 內建庫（如 `string`, `random.choice`）動態生成對應格式的資料。 - 禁止在程式碼中使用 Dify 的 `{{...}}`\
+            \ 佔位符。 \n4. 【去機敏化數據生成】： \n- 內容需保持中性，文字欄位優先使用「欄位名_序號」（如：NAME_001）。\n -\
+            \ 確保 CSV 標題列與解析後的 Schema 完全一致。 5. 【技術規範】： \n- 僅輸出 Python 代碼，不包含任何 Markdown\
+            \ 標籤或解釋。 \n- 最終生成的 CSV 字串必須存入全局變數 `result`。\n\n# 開始撰寫代碼"
+        selected: false
+        title: LLM_Schema_Only
+        type: llm
+        vision:
+          enabled: false
+      height: 124
+      id: '17719018131900'
+      position:
+        x: 1087.2902776455142
+        y: 191.72817616636112
+      positionAbsolute:
+        x: 1087.2902776455142
+        y: 191.72817616636112
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        error_strategy: fail-branch
+        model:
+          completion_params:
+            temperature: 0.5
+          mode: chat
+          name: gemini-2.5-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 250fe045-8fdd-4b25-b8c9-b41a56b321da
+          role: system
+          text: "# Role\n\n你是一位專精於「去識別化測試資料」與「異常資料精確模擬 (Exact Ratio Negative Testing)」的\
+            \ Python 資料工程師。\n\n# Task\n\n根據使用者提供的「資料表結構定義（SQL 或白話文）」與「參考代碼檔案內容 / 特定欄位限制及資料破壞規則\
+            \ (reference_manual)」，撰寫一段純 Python 程式碼。該程式碼需能根據「正確率 (accuracy_rate)」參數，以絕對精準的比例，動態生成測試資料。\n\
+            \n# Rules (極度重要)\n\n1. 【技術限制】\n  * 請僅限且完全使用 Python 內建標準庫（如：`csv`, `random`,\
+            \ `datetime`, `string`, `io`, `re`）來實作所有邏輯，確保程式碼具備 100% 的原生獨立性，並省略所有外部第三方套件（如\
+            \ pandas、faker）的呼叫。\n\n2. 【精確比例控制 (Exact Ratio Control)】\n  * 請一律透過建立狀態清單並洗牌\
+            \ (status_list + shuffle) 的方式，來精準控制每一筆資料的正確與否狀態。\n  * 必須根據 `target_count`\
+            \ 與 `accuracy_rate` 計算出精確的正確與異常筆數。請務必先對 `accuracy_rate` 進行範圍安全校正，例如：`safe_rate\
+            \ = max(0, min(100, float(accuracy_rate)))`，接著再計算：`correct_count = int(target_count\
+            \ * (safe_rate / 100))`。\n  * 實作邏輯要求：建立一個狀態清單 `status_list = ['correct']\
+            \ * correct_count + ['error'] * (target_count - correct_count)`。使用 `random.shuffle(status_list)`\
+            \ 打亂清單後，在資料生成迴圈中依序取出狀態，以確保最終產出的正常與異常筆數比例 100% 精準。\n  * **正確樣態 (Valid Data)**：嚴格遵守\
+            \ Schema 骨架、手動限制條件與解析後的「參考代碼表」。【極度重要】若限制中包含「跨欄位關聯（如 C=0時D必為空）」或「數學比較（如\
+            \ A > B）」，請務必在生成基底資料時，實作對應的 `if/else` 條件式來進行「連動生成」，以確保資料邏輯的絕對合理。\n  *\
+            \ **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成一筆異常資料列時，請確保僅挑選「\
+            \ 1 到 2 個」有受到約束（如手動限制或結構推測）的欄位進行破壞（例如：將推測「不會小於 0」的數值設為 -1，或將「1~5」的範圍設為\
+            \ 9）。**注意：即使是刻意生成的錯誤代碼或無效字串，也請務必確保其長度維持在合理推斷的最大長度限制內**。針對該異常列中的「其餘所有欄位」，請務必維持\
+            \ 100% 格式與邏輯正確，以實現局部精準破壞。\n\n3. 【結構解析與優先級】\n  * 本次未提供結構規格文件，基礎骨架建立請優先以「資料表結構定義」為準。若收到的是白話文描述，請自動推斷為合適的英文欄位與資料庫型別。\n\
+            \  * **【空值 (NULL) 嚴格約束與隨機性保證】**：\n    (1). **必填欄位**：若從結構中解析出該欄位為 NOT NULL，請確保強制產出符合型態的有效值。\n\
+            \    (2). **允許空值欄位 (極度重要)**：若無明確標示 NOT NULL 則視為允許空值，請你務必在生成邏輯中，確實實作「10%~20%\
+            \ 隨機生成空值」的程式碼（例如 `if random.random() < 0.2: val = \"\"`）。\n    (3). **無論當下是生成「正確樣態」還是「異常樣態的未破壞欄位」，都請忠實保留此空值的隨機分佈狀態，以貼近真實資料庫樣貌。**\n\
+            \n4. 【動態資料載入與防截斷絕對防護 (Dynamic Loading & Anti-Truncation)】\n  * 【強制起手式規範\
+            \ (Boilerplate Requirement)】：系統底層已自動注入了名為 `reference_csv_data` 的全域變數字串。請確保你的\
+            \ Python 程式碼在 `import` 區塊結束後，直接且唯一使用以下寫法作為開頭，請完全省略宣告資料變數的行為：\n    `reader\
+            \ = csv.DictReader(io.StringIO(reference_csv_data))`\n    `# 接著使用 for\
+            \ row in reader: 將需要的欄位萃取成 List`\n  * 【純動態解析取代硬編碼 (Dynamic Extraction)】：請確保你的程式碼中省略\
+            \ `reference_csv_data = ...` 的賦值語句，一律省略將表格範例當作字串貼上程式碼的行為，以確保系統穩定運作，避免\
+            \ Token 截斷。\n  * 【單行字串與微型陣列規範】：為了從物理層面確保程式碼安全，產出的程式碼中請一律且唯一使用單行引號（`'`\
+            \ 或 `\"`）來宣告字串，並省略三個引號（`\"\"\"` 或 `'''`）的使用。靜態陣列的元素數量請維持在 5 個以內。\n  *\
+            \ 【無代碼表之動態生成 (Fallback Generation)】：若特定欄位在 `reference_csv_data` 中沒有對應的代碼可供抽取，或該變數為空字串，請自動切換為「常理動態推斷」，結合\
+            \ Python 內建函式（如 `random.choices`）即時生成擬真資料。\n\n5. 【動態生成與去機敏化優先級 (Dynamic\
+            \ Generation & Priority)】\n  * 【代碼表優先】：若某欄位在「參考代碼檔案內容」或「手動限制」中有合法清單，請優先從該清單中隨機抽取真實代碼，以維持原生代碼樣態。\n\
+            \  * **【高度機敏個資強制遮罩 (PII Masking)】（極度重要）：**\n    (1). **身分證字號與性別連動 (100%防禦機制)**：遇到身分證相關欄位，請隨機生成首碼英文。【執行順序極度重要】：請務必在程式碼「單筆資料生成的迴圈一開始」，就先檢查並決定好該列的「性別\
+            \ (GENDER/SEX)」數值並暫存！接著，身分證的「第二碼 (性別碼)」請嚴格與該暫存的性別值連動。然後利用固定字典轉換英文字母。計算加權總和求出正確檢查碼\
+            \ `correct_chk`。最後，【請一律從 0~9 中隨機挑選一個不等於 correct_chk 的數字作為最後一碼】拼接產出，確保其具備無效的檢核特性。\n\
+            \    (2). **電話號碼**：遇到電話或手機欄位，請一律生成包含大寫 'X' 遮罩的虛擬號碼（例如：`f\"09{random.randint(0,9)}XXXX{random.randint(0,999):03d}\"\
+            `）。\n    (3). **地址 (Address)**：地址相關欄位請一律且唯一使用「某縣市某區某路」作為虛擬開頭格式，後接隨機數字與字母組合。\n\
+            \  * **【智能語意推斷與常識連動】**：遇到沒有代碼表且具有明確現實意義的欄位名稱（如：年、月、週、日期、時間等），請自動解鎖你的常識，自行以\
+            \ Python 程式邏輯生成符合現實的合理格式，並維持它們之間的連動關係。\n  * **【絕對安全日期生成 (Safe Date Generation)】：生成隨機日期時，請一律使用定義基礎日期物件（例如\
+            \ `base_date = datetime.datetime(2020, 1, 1)`）並加上 `datetime.timedelta(days=random.randint(0,\
+            \ 2000))` 的方式來推算，確保日曆的合法性與安全，完成推算後再進行字串格式化。**\n  * **【普通欄位去機敏化】**：對於毫無特徵且無代碼表的普通字串欄位（如備註、姓名、鄉鎮等），請一律直接動態生成中性內容（如：`NAME_001`,\
+            \ `TOWN_01`），以確保資料完美去識別化。\n\n6. 【極度重要：輸出規範與防呆交卷機制】\n  * 【絕對純代碼輸出】：你的回答將直接交由\
+            \ Python 執行器讀取！請確保輸出內容 100% 為可直接執行的純 Python 程式碼，並省略所有 Markdown 標籤、開頭問候或思考標籤，以確保系統順利解析。\n\
+            \  * 請將 `target_count` 與 `accuracy_rate` 直接以具體數值寫死於程式碼中。\n  * 【安全寫入與逗號防護\
+            \ (Safe CSV Writing)】：為了維持 CSV 欄位對齊，請一律且唯一在準備好單列陣列資料後，使用原生 `csv.writer(output).writerow(row_values)`\
+            \ 將陣列寫入，以確保字串保護與資料格式 100% 穩定，並省略使用 `','.join(...)` 進行字串拼接。\n  * 【正則表達式與跳脫字元防護\
+            \ (Regex Escape Safety)】：若程式碼中需使用正則表達式（如 `re` 模組）或任何包含 `\\d`, `\\w`, `\\\
+            s` 等跳脫字元的字串，請【一律且唯一】使用 Raw String 格式宣告（例如：`r'\\d+'`），以維持語法安全並省略一般字串宣告（如\
+            \ `'\\d+'`）。\n  * 【安全字典讀取 (Safe Dictionary Access)】：當你在程式碼中建構與讀取欄位屬性字典時，請一律強制使用\
+            \ `.get('key', default)` 方法（例如：`col.get('length', 255)` 或 `col.get('is_pk',\
+            \ False)`），以確保 100% 避免 `KeyError`。\n* 【強制型別安全與數學運算防禦 (TypeError 與 ValueError\
+            \ 崩潰防護)】：\n    (1). 空值轉型防護：處理可能為空值的變數時，轉型前請務必實作安全預設值（例如：`int(val if val\
+            \ else 0)` 或 `float(val if val else 0)`），以維持正確型態。\n    (2). 數學運算防護 (針對\
+            \ unsupported operand type)：在進行加減乘除 (`-`, `+`) 或邏輯比較 (`>`, `<`) 時，運算前【兩邊的變數都必須確實轉型】為數值，例如嚴格寫成：`int(A\
+            \ if A else 0) - int(B if B else 0)`。\n    (3). 亂數範圍防護 (極度重要)：若將變數用於 `random.randint(min,\
+            \ max)` 等範圍計算，請務必確保 max 大於等於 min（例如使用 `max(min_val, calculated_max)` 來保底），以徹底避免\
+            \ `empty range for randrange()` 導致系統崩潰。\n    (4). 日期運算與格式化 (正向安全路徑)：進行日期推算時，請【一律確保】參與運算的變數保持為\
+            \ `datetime.datetime` 或 `datetime.date` 原生物件來進行 `timedelta` 加減。運算完成後，請【直接且唯一使用】\
+            \ `.strftime('%Y-%m-%d')` 將最終物件轉換為字串並寫入資料列。這是唯一允許的日期處理路徑，請直接將物件轉為字串，藉此保持型別的\
+            \ 100% 絕對安全。\n    (5). 串列操作與資料新增 (List Append 安全路徑)：在建構資料列或操作陣列 (List)\
+            \ 時，若要將單一變數（如字串或數字）加入陣列中，請【一律且唯一使用】 `.append(value)` 方法。若是合併多項資料，請明確將所有項目包裹在方括號中形成陣列（如\
+            \ `[A, B] + [C, D]`）。請一律透過這兩種標準陣列操作法來組合資料，以確保資料結構 100% 穩定。\n  * 【容錯與保證輸出\
+            \ (Try-Except Guarantee)】：你撰寫的所有主要邏輯，必須被包裝在最外層的 `try...except Exception\
+            \ as e:` 區塊中。請省略 `global` 關鍵字的宣告，直接為 `result` 變數賦值即可，系統會自動讀取它。若成功，請在 try\
+            \ 區塊最後寫 `result = output.getvalue()`；若發生例外錯誤，請在 except 區塊中寫 `result =\
+            \ f\"【程式邏輯崩潰】: {str(e)}\"`。\n  * 【單行引號與註解規範】：輸出內容的第一個字元必須是 `import`。宣告字串時，請一律且唯一使用在單行內閉合的單引號\
+            \ `'` 或雙引號 `\"`。所有的說明文字、分隔線都請加上 `#` 變成單行註解，確保字串格式安全閉合。\n\n7. 【主鍵唯一性防護\
+            \ (Primary Key Uniqueness)】\n  * 【自動解析 PK】：請仔細閱讀規格，找出標記為主鍵（如 'Y'）的欄位，視為單一或複合主鍵。\n\
+            \  * **【流水號優先策略】：若主鍵包含毫無關聯限制的普通字串或整數（如 ID、SEQ_NO），請優先結合迴圈 index (流水號)\
+            \ 來生成（例如：`f\"ID_{i:05d}\"`），以 O(1) 效率保證絕對唯一。**\n  * 【關聯欄位絕對保真】：若主鍵包含代碼欄位（如疾病、縣市等），請確保其數值\
+            \ 100% 完全從你擷取的合法清單中抽取，維持原生代碼樣態。\n  * 【防卡死與提早交卷機制 (Early Exit)】：將隨機抽取邏輯寫在\
+            \ `while True` 內部並組合 Tuple 查重。實作重試計數器 `retry_count`，若單筆資料連續碰撞超過 200 次，代表「合法的排列組合已經被耗盡」。此時請直接\
+            \ `break` 終止最外層的資料生成大迴圈（提早交卷），寧可最終產出筆數少於 `target_count`，也請務必保留目前已成功生成的資料陣列並順利結束程式，確保所有產出的代碼皆\
+            \ 100% 符合外部鍵關聯邏輯！"
+        - id: c1eb32e8-4009-4e97-a0a8-66debfb71688
+          role: user
+          text: "# Input Specifications\n\n## 1. 結構與欄位定義 (Structure)\n- 【資料表結構定義】(支援\
+            \ SQL 語法或白話文描述): {{#1770959733651.table_schema#}}\n\n## 2. 數據關聯與約束 (Constraints)\n\
+            - 【代碼表檔案內容】(來自 Reference 提取器): {{#1771818070906.text#}}\n- 【手動特殊限制描述】:\
+            \ {{#1770959733651.reference_manual#}}\n\n## 3. 生成目標 (Goal)\n- 目標總筆數：{{#1770959733651.target_count#}}\
+            \ 筆\n- 資料正確率 (accuracy_rate)：{{#1770959733651.accuracy_rate#}} %\n\n---\n\
+            \n# Execution Task\n\n請根據上述輸入撰寫一段「純 Python 程式碼」來執行以下任務：\n\n1. 【結構解析與語意推斷】：\
+            \ \n- 本次未提供結構規格文件，基礎骨架建立請完全以「資料表結構定義」為準。 \n- 若使用者提供的是「白話文描述」（例如：包含病例編號、起始時間等），請發揮資料工程師的專業，自動推斷最適合的英文字母欄位名稱（如\
+            \ record_id, start_time）與資料庫資料型別（如 VARCHAR, DATETIME）。 \n- 嚴格遵守推斷後或 SQL\
+            \ 定義的欄位順序與資料型態，生成的 CSV 標題列必須與之完全對齊。 \n\"請特別注意解析上傳檔案中的*「資料描述」或「備註」*欄位，將其中的文字說明（如：不會小於0、特定的代碼對應）轉換為生成資料的嚴格約束條件。\"\
+            \n\n2. 【精確比例與異常模擬邏輯】：\n - **禁止**使用獨立隨機機率（如 `random.randint`）。請務必使用以下「洗牌邏輯」確保精確比例：\
+            \ 先計算 `correct_count = int({{{#1770959733651.target_count#}}} * ({{{#1770959733651.accuracy_rate#}}}\
+            \ / 100))`。 建立並打亂狀態清單：`status_list = ['correct'] * correct_count + ['error']\
+            \ * ({{{#1770959733651.target_count#}}} - correct_count)`，接著使用 `random.shuffle(status_list)`。\
+            \ \n- 在生成迴圈中，依據 `status_list` 的當前狀態決定生成樣態。 \n- **正確樣態**：依照 Schema 與解析後的代碼表，生成符合規範的資料。\
+            \ \n- **異常樣態 (Invalid Data) 與局部精準破壞**：生成「型態正確但邏輯/格式錯誤」的資料。【極度重要】每次生成一筆異常資料列時，請在程式碼中實作「隨機挑選\
+            \ 1 到 2 個」有受到約束（如手動限制或代碼表）的欄位進行破壞（例如：數值設為極端邊界值如 -1 或 999999，或刻意選取不在代碼表內的無效字串）。該異常列中的「其餘所有欄位」（包含未受限欄位，以及未被抽中破壞的受限欄位），都**必須保持\
+            \ 100% 格式與邏輯正確**。絕對禁止在同一筆資料中將所有受限欄位一次全部破壞。\n 3. 【數據硬編碼 (Hardcoding)】：\
+            \ \n- 必須解析「代碼表檔案內容」中的 ID 或代碼，並將其 Hardcode 在 Python 清單中。 \n- 正確樣態須從該清單隨機選取；異常樣態則必須刻意生成不在清單內的錯誤代碼。\
+            \ \n- 若檔案內容為空，則以「手動特殊限制」中的規則為準。 \n- 禁止在程式碼中使用 Dify 的 `{{...}}` 佔位符。 \n\
+            4. 【去機敏化數據生成】： \n- 內容需保持中性，文字欄位優先使用「欄位名_序號」（如：NAME_001）。 \n- 確保 CSV 標題列與解析後的\
+            \ Schema 完全一致。 \n5. 【技術規範】： \n- 僅輸出 Python 代碼，不包含任何 Markdown 標籤或解釋。 \n\
+            - 最終生成的 CSV 字串必須存入全局變數 `result`。\n\n# 開始撰寫代碼"
+        selected: false
+        title: LLM_Reference_Only
+        type: llm
+        vision:
+          enabled: false
+      height: 124
+      id: '17719018264720'
+      position:
+        x: 1087.2902776455142
+        y: -18.58870645205232
+      positionAbsolute:
+        x: 1087.2902776455142
+        y: -18.58870645205232
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        is_array_file: false
+        selected: false
+        title: Schema extractor
+        type: document-extractor
+        variable_selector:
+        - '1770959733651'
+        - schema_file
+      height: 104
+      id: '1771902295501'
+      position:
+        x: 113.01469319002115
+        y: -213.9154043655995
+      positionAbsolute:
+        x: 113.01469319002115
+        y: -213.9154043655995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        is_array_file: false
+        selected: false
+        title: Reference Extractor_B
+        type: document-extractor
+        variable_selector:
+        - '1770959733651'
+        - reference_file
+      height: 104
+      id: '1771902302816'
+      position:
+        x: 401.34790982773893
+        y: -213.9154043655995
+      positionAbsolute:
+        x: 401.34790982773893
+        y: -213.9154043655995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        outputs:
+        - value_selector:
+          - '1772438776106'
+          - output
+          value_type: string
+          variable: result
+        selected: false
+        title: 防呆輸出
+        type: end
+      height: 88
+      id: '1772431109071'
+      position:
+        x: 401.34790982773893
+        y: -335.4183370127265
+      positionAbsolute:
+        x: 401.34790982773893
+        y: -335.4183370127265
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        selected: false
+        template: "資料生成失敗：缺少核心結構定義\r\n\r\n系統偵測到您尚未提供任何資料表的結構資訊。為了確保生成的測試資料精準，請務必補充以下至少一項資訊後再次執行：\r\
+          \n1. 在「資料表結構定義」文字框中，手動輸入 SQL Schema 或白話文描述。\r\n2. 上傳包含欄位定義的「資料規格檔案」。\r\n\
+          \r\n(註：若僅上傳「代碼表 Reference」，系統將無法得知表單的完整骨架，請一併提供結構定義。)"
+        title: 模板轉換
+        type: template-transform
+        variables: []
+      height: 52
+      id: '1772438776106'
+      position:
+        x: 113.01469319002115
+        y: -335.4183370127265
+      positionAbsolute:
+        x: 113.01469319002115
+        y: -335.4183370127265
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        outputs:
+        - value_selector:
+          - '1773023087529'
+          - output
+          value_type: string
+          variable: output
+        selected: false
+        title: 異常結束
+        type: end
+      height: 88
+      id: '1773022769926'
+      position:
+        x: 1937.0612814091296
+        y: -65.89392228791505
+      positionAbsolute:
+        x: 1937.0612814091296
+        y: -65.89392228791505
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        selected: false
+        template: AI 模型連線異常或規格書內容過長，導致生成失敗。請稍後再試，或嘗試減少一次丟入的規格書欄位數量。
+        title: 模板轉換 2
+        type: template-transform
+        variables: []
+      height: 52
+      id: '1773023087529'
+      position:
+        x: 1657.1172296598443
+        y: -65.89392228791505
+      positionAbsolute:
+        x: 1657.1172296598443
+        y: -65.89392228791505
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(full_text):\n    if isinstance(full_text, list):\n       \
+          \ text_str = '\\n'.join([str(x) for x in full_text])\n    else:\n      \
+          \  text_str = str(full_text)\n        if text_str.startswith(\"['\") and\
+          \ text_str.endswith(\"']\"):\n            text_str = text_str[2:-2]\n  \
+          \          \n    text_str = text_str.replace('\\\\n', '\\n').replace('\\\
+          \\r', '\\n')\n    \n    lines = text_str.splitlines()\n    valid_lines =\
+          \ [line for line in lines if line.strip() != \"\"]\n    \n    mini_lines\
+          \ = valid_lines[:5]\n    \n    return {\n        \"mini_text\": '\\n'.join(mini_lines)\n\
+          \    }"
+        code_language: python3
+        outputs:
+          mini_text:
+            children: null
+            type: string
+        selected: false
+        title: 萃取代碼(Bothfile)
+        type: code
+        variables:
+        - value_selector:
+          - '1771902302816'
+          - text
+          value_type: string
+          variable: full_text
+      height: 52
+      id: '1774837600622'
+      position:
+        x: 710.9686314014984
+        y: -213.9154043655995
+      positionAbsolute:
+        x: 710.9686314014984
+        y: -213.9154043655995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    - data:
+        code: "def main(full_text):\n    if isinstance(full_text, list):\n       \
+          \ text_str = '\\n'.join([str(x) for x in full_text])\n    else:\n      \
+          \  text_str = str(full_text)\n        if text_str.startswith(\"['\") and\
+          \ text_str.endswith(\"']\"):\n            text_str = text_str[2:-2]\n  \
+          \          \n    text_str = text_str.replace('\\\\n', '\\n').replace('\\\
+          \\r', '\\n')\n    \n    lines = text_str.splitlines()\n    valid_lines =\
+          \ [line for line in lines if line.strip() != \"\"]\n    \n    mini_lines\
+          \ = valid_lines[:5]\n    \n    return {\n        \"mini_text\": '\\n'.join(mini_lines)\n\
+          \    }"
+        code_language: python3
+        outputs:
+          mini_text:
+            children: null
+            type: string
+        selected: false
+        title: 萃取代碼(Reference)
+        type: code
+        variables:
+        - value_selector:
+          - '1771818070906'
+          - text
+          value_type: string
+          variable: full_text
+      height: 52
+      id: '1774838511632'
+      position:
+        x: 710.9686314014984
+        y: -18.58870645205232
+      positionAbsolute:
+        x: 710.9686314014984
+        y: -18.58870645205232
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 0
+    viewport:
+      x: -372.06976311218205
+      y: 299.0782965375744
+      zoom: 0.6597539553864473
+  rag_pipeline_variables: []
